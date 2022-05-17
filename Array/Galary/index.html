@@ -18,10 +18,9 @@
         </form>
         <!-- categories -->
         <h5>Company</h5>
-        <article class="companies">
+        <article class="companies" id="companies">
           <button class="company-btn">all</button>
-          <button class="company-btn">ikea</button>
-          <button class="company-btn">marcos</button>
+         
         </article>
       </div>
       <!-- products -->
@@ -141,6 +140,29 @@ const products = [
     price: 9.99,
   },
 ];
+
+
+const myData = products.map(function(value,index) {
+
+  return value.company;
+
+});
+
+
+const myElemtsn  = myData.map(function(value,index) {
+
+  return `<button class="company-btn">${value}</button>`
+
+
+})
+
+console.log( myElemtsn.join(""));
+
+document.getElementById("companies").innerHTML = myElemtsn.join("");
+
+
+
+
 
 
     </script>
