@@ -20,7 +20,11 @@
         <div class="underline"></div>
       </div>
       <!-- filter buttons -->
-      <div class="btn-container">
+      <div class="btn-container" id="myButton">
+
+        <button type="button" class="filter-btn" data-id=${category}>
+          test
+        </button>
         <!-- <button type="button" class="filter-btn" data-id="all">all</button>
         <button type="button" class="filter-btn" data-id="breakfast">
           breakfast
@@ -139,9 +143,13 @@ const menu = [
   },
 ];
 
-var html='';
 
-for(let i=0;i<menu.length;i++)
+
+function displayMenu(myData)
+{
+  var html='';
+
+for(let i=0;i<myData.length;i++)
 {
   html = html + ` <article class="menu-item">
           <img src="${menu[i].img}" alt="menu item" class="photo" />
@@ -157,10 +165,49 @@ for(let i=0;i<menu.length;i++)
         </article>
        `
 
+       document.getElementById("fooditems").innerHTML = html;
+
 }
 
+}
+
+document.getElementById("myButton").innerHTML = menu.map(function(value) {
+
+ return `    <button type="button" class="filter-btn" onclick="test('${value.category}');">
+         ${value.category}
+        </button>`
+}).join("");
+
+
+
+displayMenu(menu);
+
  
-  document.getElementById("fooditems").innerHTML = html;
+ 
+
+  function test(data)
+  { 
+
+    if(data == '')
+    {
+      displayMenu(menu);
+    }
+    else
+    {}
+    var myFilterData = menu.filter(function(value) {
+
+        if(value.category == data)
+        {
+
+          return true;
+        }
+
+    });
+
+    displayMenu(myFilterData);
+
+   
+  }
 
   
 

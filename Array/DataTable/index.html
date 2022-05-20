@@ -12,24 +12,35 @@
     <script>
     
 
-         var myData = [4,5,6];
+      
+
+        var myArray = [
+
+            {firstName : "test",study: "BE", city: "Pune"},
+            {firstName : "test1",study: "BCA", city: "Vadodara"},
+            {firstName : "test2",study: "ME", city: "Toronto"},
+            {firstName : "test3",study: "MCA", city: "Pune"},
+            {firstName : "test4",study: "MBA", city: "Barlin"},
 
 
-        myData.unshift(100);
 
-       // console.log(myData);
+        ];
 
-         myData.push(200);
-        myData.unshift(3000);
-         myData.unshift(5000);
-         myData.push(1000);
 
-     var final = myData.shift();
+      var myFinalResulr = myArray.find(function(value) {
 
-         console.log(myData);
+            if( value.city=="Pune" )
+            {
 
-        
+                return true;
+            }
 
+      });
+
+      console.log(myFinalResulr);
+       
+
+      
 
         // console.log(removeElement);
 
