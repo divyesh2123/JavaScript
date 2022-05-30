@@ -49,11 +49,11 @@
 
       function deleteItem(index)
       {
-        alert(index)
+       
 
-        // myItems.splice(index,1);
+         myItems.splice(index,1);
 
-        // displayInfo();
+         displayInfo();
 
       }
 
@@ -62,16 +62,20 @@
 
         var htmlItems = myItems.map(function(value,index) {
 
-          return '<p class="title">'+value +'</p>'+
-          '<div class="btn-container">'+
-           '<button type="button" class="edit-btn">'+
-            '<i class="fas fa-edit"></i>' +
-            '</button>' +
-             '<button type="button" class="delete-btn"' + 'onclick="()=>{' + deleteItem(index) +'}"'+ '/>' 
-              '<i class="fas fa-trash"></i>' +
-            '</button>' +
-           '</div>' +
-          '</div>'
+          return ` <p class=title">${value}</p>
+          <div class="btn-container">
+           
+            <button type="button" class="edit-btn">
+              <i class="fas fa-edit"></i>
+            </button>
+            <!-- delete btn -->
+            <button type="button" class="delete-btn" onclick="deleteItem('${index}')" >
+
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+
+        </div>`
         });
 
 
