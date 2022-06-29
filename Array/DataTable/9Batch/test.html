@@ -1,27 +1,46 @@
+<!DOCTYPE html>
 <html>
+<body>
 
-    <head>
+<p>Press and hold down a key inside the text field to set a red background color. Release the key to set a green background color.</p>
 
-    </head>
-    <body>
+<input type="text" id="demo"  onkeypress="myFunction(event)">
 
-        <script>
+<script>
+function myFunction(event) {
 
-            //defination of function
-            
-         var myData = [4,5,6];
-        
+    console.log(event);
 
-       var d =  myData.push(7);
+    var theEvent = event || window.event;
+    
+    // Handle paste
+  
+      // Handle key press
+      var key = theEvent.keyCode || theEvent.which;
+    //  alert(key);
 
-         console.log(d);
-
-         console.log(myData)
-
+    
+        if(key >=47 && key<=54)
+        {
            
+        }
+        else
+        {
+            theEvent.returnValue = false;
+          if (theEvent.preventDefault) theEvent.preventDefault();
 
-        </script>
+        }
 
-    </body>
+      
+    alert(key);
 
+  
+
+
+}
+
+
+</script>
+
+</body>
 </html>
