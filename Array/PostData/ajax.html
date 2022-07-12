@@ -23,12 +23,18 @@ loadDoc("https://jsonplaceholder.typicode.com/albums", myFunction1);
 
 loadDoc("https://jsonplaceholder.typicode.com/comments", myFunction2);
 
-function loadDoc(url, xyz,) {
+function loadDoc(url, xyz) {
   const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {xyz(this);}
+  xhttp.onload = function() {myFunction1()(this);}
   xhttp.open("GET", url);
   xhttp.send();
+
+  
 }
+
+fetch("te").then(y=>y.jz).catch(Y=>Y)
+
+
 
 function myFunction1(xhttp) {
   
